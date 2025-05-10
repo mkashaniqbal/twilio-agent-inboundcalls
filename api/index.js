@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     await client.calls.create({
       to: salesRep,
       from: twilioNumber,
-      url: `https://${req.headers.host}/api/whisper-rep?lead=${encodeURIComponent(leadNumber)}`,
+      url: `https://twilio-agent-inboundcalls.vercel.app/api/whisper-rep?lead=${encodeURIComponent(leadNumber)}`,
     });
 
     // Step 2: Prepare TwiML for lead connection (this is for Twilio to use, not sent directly to user)
